@@ -1,0 +1,26 @@
+{
+  "name": "ssd-assignment-1-csrf",
+  "version": "1.0.0",
+  "description": "Blogpost URL : https://udithakasun.wordpress.com/2018/10/04/cross-site-request-forgery-protecton/",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UdithaKasun/ssd-assignment-1-csrf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UdithaKasun/ssd-assignment-1-csrf/issues"
+  },
+  "homepage": "https://github.com/UdithaKasun/ssd-assignment-1-csrf#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "nocache": "^2.0.0",
+    "uuid": "^3.3.2"
+  }
+}
