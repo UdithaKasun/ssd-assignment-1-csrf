@@ -99,26 +99,13 @@
 
 <script>
     function getCSRFToken() {
-        axios.post('/session', {withCredentials: true})
-            .then(response => {
-                $("#money-transfer-form").append(
-                    `<input type="text" hidden name="csrfToken" id="inputToken" value=${response.data.token} />`
-                )
-            })
-            .catch(error => {
-                console.log("No TOken")
-                window.location.href = '/';
-            });
+        const CSRF_TOKEN = Cookies.get('csrf-token');
+        $("#money-transfer-form").append(
+                    `<input type="text" hidden name="csrfToken" id="inputToken" value=${CSRF_TOKEN} />`
+        );
     }
-
     function logout(){
-        axios.post('/logout', {withCredentials: true})
-            .then(response => {
-                Cookies.remove('csrf-token');
-                window.location.href = '/';
-            })
-            .catch(error => {
-                window.location.href = '/';
-            });
+        Cookies.remove('csrf-token');
+        window.location.href = '/';
     }
 </script>

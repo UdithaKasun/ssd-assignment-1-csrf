@@ -92,4 +92,12 @@ app.post('/transfer', (req, res) => {
 
 });
 
+app.post('/logout', (req, res) => {
+    
+    const sessionID = req.cookies['session-id'];
+    // Checking if Session ID matches CSRF Cookie
+    SESSION_IDS.delete(sessionID);
+    res.sendFile('views/login.html', {root: __dirname});
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
